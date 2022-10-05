@@ -51,7 +51,7 @@ int main() {
     printf("Press 1 to stop and Press 2 to retry : ");
     scanf("%d" , &sentinel2) ;
     }
-    printf("Thank you for using my code. If you notice a mistake in linear decomposition please notify me ^_^ ");
+    printf("Thank you for using my code. If you notice a mistake in the decomposition please notify me ^_^ ");
 
     return 0;
 }
