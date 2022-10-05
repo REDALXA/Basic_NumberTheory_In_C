@@ -4,14 +4,15 @@
 #include <stdio.h>
 
 int problem = 0 ; //initialize the problem variable as a global variable
-int sentinel = 2 ;
+int sentinel2 = 2 ;
 
 void checkfactor(int k) ;
 
 int main() {
     printf("Welcome to the Integer Factorial Primal Decomposition Program");
     printf("\n\n"); //the welcome screen
-    
+    while(sentinel2 != 1) {
+        int sentinel = 2 ;
     while(sentinel != 1) {
         
         printf("Please enter the integer number whose factorial you want to decompose (number must be below 200 : ");
@@ -29,49 +30,65 @@ int main() {
         printf("The integer that you wish to decompose is %d ! . Is this correct? " , problem); //making sure input is correct
         printf("\n");
         printf("Press 1 to confirm and Press 2 to retry : ");
-        scanf("%d" , &sentinel) ;
+        scanf("%d" , &sentinel) ; // confirmation
         if(sentinel == 1) {
             printf("\n\n") ;
-            printf("Here we start ");
+            printf("Here we start "); //finally we start
         }
         else {
             printf("\n\n\n");
             printf("Thats fine. Everyone makes mistakes");
+            printf("\n"); // dont worry >.<
             
         }
     }
-    checkfactor(problem);
+    printf("\n") ;
+    printf("%d ! = " , problem) ; // lets start
+    checkfactor(problem); // finally we get to the interesting part wahoo
+    printf("\n\n");
+    printf("One factorial done. Do you want another try ?") ; // lets try again shall we?
+    printf("\n\n");
+    printf("Press 1 to stop and Press 2 to retry : ");
+    scanf("%d" , &sentinel2) ;
+    }
+    printf("Thank you for using my code. If you notice a mistake in linear decomposition please notify me ^_^ ");
 
     return 0;
 }
 
 void checkfactor(int k) {
-    int prime[46] = {2 , 3 , 5 , 7 , 11 , 13 , 17 , 19, 23 , 29 , 31 , 37 , 41 , 43 , 47, 53 , 59 , 61 , 67, 71 , 73, 79 , 83 , 89 , 97 , 101 , 103 , 107 , 109 , 113 , 127, 131 , 137 , 139 , 149 , 151, 157 , 163, 167, 173, 179, 181, 191, 193 , 197, 199} ;
+    int prime[46] = {2 , 3 , 5 , 7 , 11 , 13 , 17 , 19, 23 , 29 , 31 , 37 , 41 , 43 , 47, 53 , 59 , 61 , 67, 71 , 73, 79 , 83 , 89 , 97 , 101 , 103 , 107 , 109 , 113 , 127, 131 , 137 , 139 , 149 , 151, 157 , 163, 167, 173, 179, 181, 191, 193 , 197, 199} ; // initialize our array of prime number 
+    // if you notice a missing or skipped prim enumber please notify me (T_T)
     int counter = 0 ;
     int stop = 0 ;
-    int temp = 0 ;
+    int temp = 0 ; // initialize our variable
     while (stop == 0) { // start while
         if(k >= prime[counter]) {
-            counter = counter + 1 ;
+            counter = counter + 1 ; // advance to the next bigger prime
         }
         else {
             stop = 1 ; // while loop only stops when k is smaller than a prime number
         }
     } // end while
-    counter = counter - 1 ;
-    int store[46][2] ;
-    int i = 0 ;
+    counter = counter - 1 ; // we only need prime number that is less than or equal
+    int store[46][2] ; // place for our prime and power pair
+    int i = 0 ; // initialize the variable that is used in for loop control
     for(i = 0 ; i <= counter ; i ++) {
-    	store[i][0] = prime[i] ;
-    	int checker = prime[i] ;
+    	store[i][0] = prime[i] ; // place prime number in store
+    	int checker = prime[i] ; // initialize the checker variable
     	while(k/checker > 0) {
-    		temp = temp + k /checker ;
-    		checker = checker * prime[i] ;
+    		temp = temp + k /checker ; // temporary place to hold the result of our division that is then repeatedly added as long as the division does not result in zero
+    		checker = checker * prime[i] ; //  if k divided by checker is not zero then we need to power up our prime number
     		}
-    	store[i][1] = temp ;
-    	temp = 0 ;
-    	printf("\n") ;
-    	printf(" %d  %d " , store[i][0] , store[i][1]);	
+    	store[i][1] = temp ; // store the result of our addition
+    	temp = 0 ; // return it back to zero once data is stored
+    	printf(" %d ^ %d " , store[i][0] , store[i][1]); // lets start printing
+    	if(i == counter) {
+    	    printf("\n\n") ; // final prime should not end with mutliplicative symbol
+    	}
+    	else {
+    	    printf(" * ") ; //other prime should end with multiplicative symbol
+    	}
     	}
     
     
