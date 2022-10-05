@@ -1,0 +1,11 @@
+Hello Everyone this is REDALXA
+As we know from number theory that every integer can be decomposed as products of prime
+The primal decomposition of a prime number is only a product of prime and 1
+While a composite number are number that are products of mutliple prime
+Every integer has a unique factorial decomposition
+And factorial is defined as n! = n * (n-1) * (n-2) * ..... * 1
+An integer factorial that is bigger than 2 are by definition a composite number
+In this algorithm we use the special property of integer division flooring to find the primal decomposition of factorial
+For now at 5 October 2022 this program is only able to find the primal decomposition of prime number that is less than 200.
+In the future I hope I can extend this program capability to allow even bigger max number 
+Adios
