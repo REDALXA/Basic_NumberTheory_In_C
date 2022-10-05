@@ -2,3 +2,7 @@ Version History
 
 0.1.0 5 October 2022
 Code can run but still needs a lot of comment writing and also there is still a need to enchance user readability
+
+Version 0.1.1 5 Octobe 2022
+Code has been tested and has run. Add feature to do decomposition multiple times
+Includes a lot more comment to make troubleshooting and learning easier
