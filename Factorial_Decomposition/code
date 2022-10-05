@@ -57,7 +57,7 @@ int main() {
 }
 
 void checkfactor(int k) {
-    int prime[46] = {2 , 3 , 5 , 7 , 11 , 13 , 17 , 19, 23 , 29 , 31 , 37 , 41 , 43 , 47, 53 , 59 , 61 , 67, 71 , 73, 79 , 83 , 89 , 97 , 101 , 103 , 107 , 109 , 113 , 127, 131 , 137 , 139 , 149 , 151, 157 , 163, 167, 173, 179, 181, 191, 193 , 197, 199} ; // initialize our array of prime number 
+    int prime[47] = {2 , 3 , 5 , 7 , 11 , 13 , 17 , 19, 23 , 29 , 31 , 37 , 41 , 43 , 47, 53 , 59 , 61 , 67, 71 , 73, 79 , 83 , 89 , 97 , 101 , 103 , 107 , 109 , 113 , 127, 131 , 137 , 139 , 149 , 151, 157 , 163, 167, 173, 179, 181, 191, 193 , 197, 199, 211} ; // initialize our array of prime number 
     // if you notice a missing or skipped prim enumber please notify me (T_T)
     int counter = 0 ;
     int stop = 0 ;
@@ -71,7 +71,7 @@ void checkfactor(int k) {
         }
     } // end while
     counter = counter - 1 ; // we only need prime number that is less than or equal
-    int store[46][2] ; // place for our prime and power pair
+    int store[47][2] ; // place for our prime and power pair
     int i = 0 ; // initialize the variable that is used in for loop control
     for(i = 0 ; i <= counter ; i ++) {
     	store[i][0] = prime[i] ; // place prime number in store
